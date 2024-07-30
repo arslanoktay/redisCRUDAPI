@@ -118,8 +118,8 @@ type FindAllPage struct {
 }
 
 type FindResult struct {
-	Orders model.Order
-	curser uint64
+	Orders []model.Order
+	Curser uint64
 }
 
 // bring all records is expensive.use pagination break few pages
@@ -157,6 +157,6 @@ func (r *RedisRepo) FindAll(ctx context.Context, page FindAllPage) (FindResult, 
 
 	return FindResult{
 		Orders: orders,
-		Cursor: cursor,
-	}
+		Curser: cursor,
+	}, nil
 }
