@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	app := application.New()
+	app := application.New(application.LoadConfig())
 
 	// takes a context and signal, return context if signal created notify
 	// contexts works like a tree, if parent context stops, childs will be stop aswell
